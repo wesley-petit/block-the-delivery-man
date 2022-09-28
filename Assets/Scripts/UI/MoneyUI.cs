@@ -1,17 +1,18 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 // Affiche l'argent disponible
 public class MoneyUI : MonoBehaviour
 {
 	[SerializeField] private TMP_Text _moneyText = null;
-	[SerializeField] private Stats _playerStats = null;
+	[SerializeField] private PlayerState playerState = null;
     
 	private void Start() => UpdateUI();
 
 
-    private void OnEnable() => _playerStats.OnMoneyChange += UpdateUI;
-	private void OnDisable() => _playerStats.OnMoneyChange -= UpdateUI;
+    private void OnEnable() => playerState.OnMoneyChange += UpdateUI;
+	private void OnDisable() => playerState.OnMoneyChange -= UpdateUI;
 
-	private void UpdateUI() => _moneyText.SetText($"${_playerStats.Money}");
+	private void UpdateUI() => _moneyText.SetText($"${playerState.Money}");
 }

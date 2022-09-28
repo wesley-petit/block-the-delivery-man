@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
@@ -30,12 +31,12 @@ public class Node : MonoBehaviour
 
 	[field:SerializeField] public GameObject Occupied { get; set; }
 
-	// private void Awake()
-	// {
-	// 	_thisTranform = transform;
-	// 	_rend = GetComponent<Renderer>();
-	// 	_startColor = _rend.material.color;
-	// }
+	private void Awake()
+	{
+		_thisTranform = transform;
+		_rend = GetComponent<Renderer>();
+		_startColor = _rend.material.color;
+	}
 	//
 	// private void Start() => _buildManager = BuildManager.Instance;
 	//
@@ -110,5 +111,8 @@ public class Node : MonoBehaviour
 	// private void OnMouseExit() => ChangeColor(_startColor);
 	//
 	// public void ActiveHoverColor() => ChangeColor(_hoverColor);
-	private void ChangeColor(Color newColor) => _rend.material.color = newColor;
+
+	public void ResetColor() => ChangeColor(_startColor);
+
+	public void ChangeColor(Color newColor) => _rend.material.color = newColor;
 }

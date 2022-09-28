@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24a1c01d4fe0f704a87d61148a9fba6e, type: 3}
-  m_Name: PlayerStats
+  m_Script: {fileID: 11500000, guid: ffee7e9879476b046ab8f4d1ba01dc96, type: 3}
+  m_Name: PlayerState
   m_EditorClassIdentifier: 
-  _money: 250
-  _startMoney: 500
+  _money: 400
+  _startMoney: 400

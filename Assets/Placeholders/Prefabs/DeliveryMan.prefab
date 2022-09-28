@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 34715299875961039}
   - component: {fileID: 5899253924504397157}
-  - component: {fileID: 856636536100033815}
   - component: {fileID: 3513358015692406064}
+  - component: {fileID: 1365382442}
   m_Layer: 0
   m_Name: DeliveryMan
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8838626988431022706}
   m_Father: {fileID: 0}
@@ -46,21 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e29199491924694eb41c37b32c6f929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
   _movementTime: 3
   _validReachDistance: 0.1
---- !u!114 &856636536100033815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673487525910987898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b7fafa8cc2d6b4c8987841fdcfe776, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3513358015692406064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +63,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startNode: {fileID: 0}
   _endNode: {fileID: 0}
+  _pathfinding: {fileID: 1365382442}
+  _characterMovement: {fileID: 5899253924504397157}
+--- !u!114 &1365382442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673487525910987898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1b04a53c6f7784db45084ad6bff949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grid: {fileID: 0}
 --- !u!1 &4502837482302440864
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +106,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 34715299875961039}
   m_RootOrder: 0
@@ -126,6 +130,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

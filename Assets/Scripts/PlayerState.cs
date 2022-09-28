@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Stats", menuName = "Stats")]
-public class Stats : ScriptableObject
+[CreateAssetMenu(fileName = "New Player State", menuName = "State/Player State")]
+public class PlayerState : ScriptableObject
 {
 	[SerializeField] private int _money = 400;
 	[SerializeField] private int _startMoney = 400;

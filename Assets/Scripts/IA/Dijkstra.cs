@@ -7,10 +7,9 @@ public class Dijkstra : MonoBehaviour
     [SerializeField] private Grid _grid = null;
     
     // TODO Prendre en compte s'il n'y a pas de chemin possible
-    public Stack<Node> GetShortestPath(Node start, Node end)
+    public List<Node> GetShortestPath(Node start, Node end)
     {
         List<Node> nodeNotVisited = new List<Node>();
-        bool bSuccess = false;
 
         // Reset all cost and path previously made
         foreach (Node node in _grid.Graph.Values)
@@ -50,23 +49,27 @@ public class Dijkstra : MonoBehaviour
             // Reach the end
             if (nearestNode == end)
             {
-                bSuccess = true;
                 break;
             }
         }
 
-        if (!bSuccess)
-            return null;
-        
         // Construct the shortest path
-        Stack<Node> path = new();
+        List<Node> path = new();
         Node temp = end;
         while (temp != start)
         {
-            path.Push(temp);
+            path.Add(temp);
             temp = temp.Predecessor;
+
+            if (!temp)
+            {
+                Debug.LogWarning("No path available.");
+                path.Clear();
+                break;
+            }
         }
 
+        path.Reverse();
         return path;
     }
 
