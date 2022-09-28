@@ -1,62 +1,77 @@
+using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
-
-public class NodeCouples
-{
-    public Node Predecessor;
-    public float Cost;
-
-    public NodeCouples(Node predecessor, float cost)
-    {
-        Predecessor = predecessor;
-        Cost = cost;
-    }
-}
 
 public class Dijkstra : MonoBehaviour
 {
-    //TODO Remplacer le graph par un vrai graph
-    //TODO Convertir un graphe en matrice et inversement
-    public void GetShortestPath(Node start, Node end, Dictionary<Vector3, Node> graph)
+    [SerializeField] private Grid _grid = null;
+    
+    // TODO Prendre en compte s'il n'y a pas de chemin possible
+    public Stack<Node> GetShortestPath(Node start, Node end)
     {
-        Dictionary<Node, NodeCouples> nodecouplesByNodes = new Dictionary<Node, NodeCouples>();
         List<Node> nodeNotVisited = new List<Node>();
+        bool bSuccess = false;
 
-        foreach (Node node in graph.Values)
+        // Reset all cost and path previously made
+        foreach (Node node in _grid.Graph.Values)
         {
-            nodecouplesByNodes.Add(node, new NodeCouples(null, Mathf.Infinity));
-            nodeNotVisited.Add(node);
+            node.Cost = Mathf.Infinity;
+            node.Predecessor = null;
+
+            // Visit only node available
+            if (!node.Occupied)
+            {
+                nodeNotVisited.Add(node);
+            }
         }
+        start.Cost = 0f;
 
-        nodecouplesByNodes[start].Cost = 0f;
-
+        // Search the shortest path
         while (nodeNotVisited.Count != 0)
         {
-            Node nearestNode = nodecouplesByNodes.OrderByDescending(k => k.Value).Where(k => nodeNotVisited.Contains(k.Key)).First().Key;
+            // Select a node with the lowest cost and that has not been visited
+            Node nearestNode = _grid.Graph
+                .OrderBy(k => k.Value.Cost).First(k => nodeNotVisited.Contains(k.Value)).Value;
             nodeNotVisited.Remove(nearestNode);
 
-            foreach (var currentNeighbor in nearestNode.Neighbors)
+            // Update cost of all neighbors with the shortest path at this moment
+            foreach (var neighbor in _grid.GetNeighborsFrom(nearestNode.Position))
             {
-                float distanceFromStartNode = nodecouplesByNodes[nearestNode].Cost + Vector3.Distance(nearestNode.Position, nearestNode.Position);
-                if (distanceFromStartNode < nodecouplesByNodes[currentNeighbor].Cost)
+                if (neighbor.Occupied) { continue; }
+                
+                float currentCost = nearestNode.Cost + CalculateCost(nearestNode, neighbor);
+                if (currentCost < neighbor.Cost)
                 {
-                    nodecouplesByNodes[currentNeighbor].Cost = distanceFromStartNode;
+                    neighbor.Cost = currentCost;
+                    neighbor.Predecessor = nearestNode;
                 }
             }
 
+            // Reach the end
             if (nearestNode == end)
             {
+                bSuccess = true;
                 break;
             }
         }
 
-        Stack<NodeCouples> path = new Stack<NodeCouples>();
-        Node current = end;
-        while (current != start)
+        if (!bSuccess)
+            return null;
+        
+        // Construct the shortest path
+        Stack<Node> path = new();
+        Node temp = end;
+        while (temp != start)
         {
-            path.Push(nodecouplesByNodes[current]);
-            current = nodecouplesByNodes[current].Predecessor;
+            path.Push(temp);
+            temp = temp.Predecessor;
         }
+
+        return path;
+    }
+
+    public float CalculateCost(Node a, Node b)
+    {
+        return Vector3.Distance(a.Position, b.Position);
     }
 }

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Emplacement possible au joueur pour placer un item
 public class Node : MonoBehaviour
 {
+	[HideInInspector] public float Cost;
+	[HideInInspector] public Node Predecessor;
+	
 	[SerializeField] private Color _hoverColor = new Color();
 	[SerializeField] private Color _notEnoughtMoneyColor = new Color(); // Couleur si le joueur n'a pas assez de'argent pour construire un item
 	[SerializeField] private Vector3 _positionOffset = Vector3.zero;
@@ -26,88 +28,87 @@ public class Node : MonoBehaviour
 		}
 	}
 
-	public GameObject Occupied { get; set; }
-	public Node[] Neighbors { get; set; }
+	[field:SerializeField] public GameObject Occupied { get; set; }
 
-	private void Awake()
-	{
-		_thisTranform = transform;
-		_rend = GetComponent<Renderer>();
-		_startColor = _rend.material.color;
-	}
-
-	private void Start() => _buildManager = BuildManager.Instance;
-
-	// Quand le joueur choisi une node pour placer un objet
-	private void OnMouseDown()
-	{
-		// Si le curseur est au dessus des boutons du shop et d'une node,
-		// le hover de la node n'est pas appliquée
-		if (EventSystem.current.IsPointerOverGameObject())
-			return;
-
-		if (!_buildManager) { return; }
-
-		if (!_buildManager.CanBuild)
-		{
-			Debug.Log("Null Object or No Selected Object.");
-			return;
-		}
-
-		if (Occupied)
-		{
-			Debug.Log("Seat Already Taken.");
-			return;
-		}
-
-		if (_buildManager.HasEnoughMoney)
-		{
-			ChangeColor(_startColor);
-		}
-		else
-		{
-			ChangeColor(_notEnoughtMoneyColor);
-		}
-
-		_buildManager.BuildItemOn(this);
-	}
-
-	// Hover la node
-	private void OnMouseEnter()
-	{
-		// Si le curseur est au dessus des boutons du shop et d'une node,
-		// le hover de la node n'est pas appliquée
-		if (EventSystem.current.IsPointerOverGameObject())
-			return;
-
-		if (!_buildManager) { return; }
-
-		// Si le joueur a choisi un item
-		if (_buildManager.CanBuild)
-			return;
-
-		if (Occupied)
-			return;
-
-		if (!_buildManager.CanBuild)
-		{
-			ChangeColor(_hoverColor);
-			return;
-		}
-
-		if (_buildManager.HasEnoughMoney)
-		{
-			ChangeColor(_hoverColor);
-		}
-		else
-		{
-			ChangeColor(_notEnoughtMoneyColor);
-		}
-	}
-
-	// Reset la couleur de la node
-	private void OnMouseExit() => ChangeColor(_startColor);
-
-	public void ActiveHoverColor() => ChangeColor(_hoverColor);
+	// private void Awake()
+	// {
+	// 	_thisTranform = transform;
+	// 	_rend = GetComponent<Renderer>();
+	// 	_startColor = _rend.material.color;
+	// }
+	//
+	// private void Start() => _buildManager = BuildManager.Instance;
+	//
+	// // Quand le joueur choisi une node pour placer un objet
+	// private void OnMouseDown()
+	// {
+	// 	// Si le curseur est au dessus des boutons du shop et d'une node,
+	// 	// le hover de la node n'est pas appliquée
+	// 	if (EventSystem.current.IsPointerOverGameObject())
+	// 		return;
+	//
+	// 	if (!_buildManager) { return; }
+	//
+	// 	if (!_buildManager.CanBuild)
+	// 	{
+	// 		Debug.Log("Null Object or No Selected Object.");
+	// 		return;
+	// 	}
+	//
+	// 	if (Occupied)
+	// 	{
+	// 		Debug.Log("Seat Already Taken.");
+	// 		return;
+	// 	}
+	//
+	// 	if (_buildManager.HasEnoughMoney)
+	// 	{
+	// 		ChangeColor(_startColor);
+	// 	}
+	// 	else
+	// 	{
+	// 		ChangeColor(_notEnoughtMoneyColor);
+	// 	}
+	//
+	// 	_buildManager.BuildItemOn(this);
+	// }
+	//
+	// // Hover la node
+	// private void OnMouseEnter()
+	// {
+	// 	// Si le curseur est au dessus des boutons du shop et d'une node,
+	// 	// le hover de la node n'est pas appliquée
+	// 	if (EventSystem.current.IsPointerOverGameObject())
+	// 		return;
+	//
+	// 	if (!_buildManager) { return; }
+	//
+	// 	// Si le joueur a choisi un item
+	// 	if (_buildManager.CanBuild)
+	// 		return;
+	//
+	// 	if (Occupied)
+	// 		return;
+	//
+	// 	if (!_buildManager.CanBuild)
+	// 	{
+	// 		ChangeColor(_hoverColor);
+	// 		return;
+	// 	}
+	//
+	// 	if (_buildManager.HasEnoughMoney)
+	// 	{
+	// 		ChangeColor(_hoverColor);
+	// 	}
+	// 	else
+	// 	{
+	// 		ChangeColor(_notEnoughtMoneyColor);
+	// 	}
+	// }
+	//
+	// // Reset la couleur de la node
+	// private void OnMouseExit() => ChangeColor(_startColor);
+	//
+	// public void ActiveHoverColor() => ChangeColor(_hoverColor);
 	private void ChangeColor(Color newColor) => _rend.material.color = newColor;
 }

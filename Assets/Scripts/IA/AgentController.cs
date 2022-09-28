@@ -1,32 +1,19 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-[RequireComponent(typeof(CharacterMovement))]
-[RequireComponent(typeof(Pathfinding))]
 public class AgentController : MonoBehaviour
 {
 	[SerializeField] private Node _startNode = null;
 	[SerializeField] private Node _endNode = null;
-
-	private CharacterMovement _characterMovement = null;
-	private Pathfinding _pathfinding = null;
-	private Node _nextTarget = null;
-	private Node _currentTarget = null;
-	private Node _previousTarget = null;
-
-	private void Awake()
-	{
-		_characterMovement = GetComponent<CharacterMovement>();
-		_pathfinding = GetComponent<Pathfinding>();
-	}
-
+	[SerializeField] private Dijkstra _pathfinding;
+	[SerializeField] private CharacterMovement _characterMovement;
+	
+	private Node _currentTarget;
+	
 	private void Start()
 	{
-		_pathfinding.CreatePath(_startNode, _endNode);
 		_characterMovement.Teleport(_startNode.BuildPosition);
-
-		_previousTarget = null;
-		_currentTarget = _pathfinding.GetTargetNode;
-		_nextTarget = _pathfinding.GetTargetNode;
+		_currentTarget = _startNode;
 	}
 
 	private void Update()
@@ -39,17 +26,20 @@ public class AgentController : MonoBehaviour
 
 		_characterMovement.Move(_currentTarget.BuildPosition);
 
-		if (_characterMovement.IsTargetReach(_currentTarget.BuildPosition))
+		if (_characterMovement.IsReachingTarget(_currentTarget.BuildPosition))
 		{
-			ChangeTarget();
+			SetNextTarget();
 		}
 	}
-
-	private void ChangeTarget()
+	
+	private void SetNextTarget()
 	{
-		_previousTarget = _currentTarget;
-		_currentTarget = _nextTarget;
-		_nextTarget = _pathfinding.GetTargetNode;
+		Stack<Node> path = _pathfinding.GetShortestPath(_currentTarget, _endNode);
+		_currentTarget = null;
+		if (path != null && 0 < path.Count)
+		{
+			_currentTarget = path.Pop();
+		}
 
 		if (_currentTarget && _currentTarget.Occupied)
 		{
@@ -59,24 +49,26 @@ public class AgentController : MonoBehaviour
 
 	private void InteractWithItem()
 	{
-		IInteractItem interactItem = _currentTarget.Occupied.GetComponent<IInteractItem>();
-		if (interactItem != null)
-		{
-			interactItem.Interact(this);
-		}
+		// IInteractItem interactItem = _currentTarget.Occupied.GetComponent<IInteractItem>();
+		// if (interactItem != null)
+		// {
+		// 	interactItem.Interact(this);
+		// }
 	}
 
+	//TODO Implemente la fuite
 	public void Flee()
 	{
-		_pathfinding.CreatePath(_previousTarget, _endNode, _currentTarget);
-		_currentTarget = _pathfinding.GetTargetNode;
-		_nextTarget = _pathfinding.GetTargetNode;
+		// _pathfinding.CreatePath(_previousTarget, _endNode, _currentTarget);
+		// _currentTarget = _pathfinding.GetTargetNode;
+		// _nextTarget = _pathfinding.GetTargetNode;
 	}
-
+	
+	//TODO Implemente l'évitement des obstacles
 	public void Avoid()
 	{
-		_pathfinding.CreatePath(_currentTarget, _endNode, _currentTarget);
-		_currentTarget = _pathfinding.GetTargetNode;
-		_nextTarget = _pathfinding.GetTargetNode;
+		// _pathfinding.CreatePath(_currentTarget, _endNode, _currentTarget);
+		// _currentTarget = _pathfinding.GetTargetNode;
+		// _nextTarget = _pathfinding.GetTargetNode;
 	}
 }
