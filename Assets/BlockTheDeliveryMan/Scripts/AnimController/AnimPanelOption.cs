@@ -17,4 +17,9 @@ public class AnimPanelOption : MonoBehaviour
         Panel.GetComponent<Animator>().SetBool("Open", false);
         // l'animator se charge de désactiver le panel
     }
+
+    private void BackMenu()
+    {
+
+    }
 }

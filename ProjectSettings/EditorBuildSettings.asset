@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/BlockTheDeliveryMan/Scenes/Option.unity
+    guid: 5329cd9aee017fc40b5818e0bfe9b81f
+  - enabled: 1
+    path: Assets/BlockTheDeliveryMan/Scenes/Menu.unity
+    guid: d217e36ee9e632542a8fb3e1910bf30e
+  - enabled: 1
     path: Assets/BlockTheDeliveryMan/Scenes/Main.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

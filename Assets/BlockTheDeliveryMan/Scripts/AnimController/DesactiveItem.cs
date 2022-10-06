@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class DesactiveItem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private void Start()
+    // Ce Script est à mettre sur l'élément parent à desactivé comportant l'animator
+    // Il doit se faire appeler avec une animation
+
+    private void OnEnable()
     {
+        this.GetComponent<Animator>().StopPlayback();
+        this.GetComponent<Animator>().Update(0f);
         this.GetComponent<Animator>().enabled = false;
-        this.GetComponent<GameObject>().SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }
