@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text_loading: {fileID: 262747916697107349}
   sliderBar: {fileID: 262747916911520946}
+  UIPanel_Loading: {fileID: 262747917011374593}
 --- !u!1 &262747916872849873
 GameObject:
   m_ObjectHideFlags: 0
