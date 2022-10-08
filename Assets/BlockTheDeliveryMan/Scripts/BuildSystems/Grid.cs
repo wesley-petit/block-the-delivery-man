@@ -4,9 +4,9 @@ using System.Collections.Generic;
 // Store all nodes and search neighbors
 public class Grid : MonoBehaviour
 {
-	[SerializeField] private float _gapBetweenEachNodes = 5f;
-
 	public readonly Dictionary<Vector3, Node> Graph = new();
+
+	private float GAP_BETWEEN_NODE = 5f;
 
 	private void Awake() => FindAndStoreAllNodes();
 
@@ -17,8 +17,8 @@ public class Grid : MonoBehaviour
 
 		foreach (var directionVector in DirectionLibrary.ALL_DIRECTIONS)
 		{
-			Vector3 searchPosition = position + directionVector * _gapBetweenEachNodes;
-			
+			Vector3 searchPosition = position + directionVector * GAP_BETWEEN_NODE;
+
 			if (Graph.ContainsKey(searchPosition))
 			{
 				Node currentNeighbor = Graph[searchPosition];

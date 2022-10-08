@@ -1,25 +1,41 @@
-using System;
 using UnityEngine;
 using System.Collections.Generic;
 
 public class PathController : MonoBehaviour
 {
+    [SerializeField] private bool _bUseDijsktra = true;
+    [SerializeField] private Grid _grid;
     [SerializeField] private GameState _gameState;
-    [SerializeField] private Dijkstra _pathfinding;
     [SerializeField] private Color _pathColor;
-    [SerializeField] private Color[] _pathProfile = Array.Empty<Color>();
+
+    private List<Node> _path = new();
+    private Node _currentTarget;
+    
+    private Pathfinding _pathfinding;
+
+    private void Awake()
+    {
+        SelectPathfindingAlgorithm();
+        _currentTarget = GetStartNode();
+        ComputeShortestPath();
+    }
+
+    public void ComputeShortestPath()
+    {
+        _path = _pathfinding.GetShortestPath(in _currentTarget, in _gameState.EndNode);
+    }
     
     public Node GetStartNode() => _gameState.StartNode;
 
-    public Node GetNextTarget(Node currentTarget)
+    public Node GetNextTarget()
     {
-        List<Node> path = _pathfinding.GetShortestPath(currentTarget, _gameState.EndNode);
-
-        Draw(path);
-        
-        if (path != null && 0 < path.Count)
+        if (_path is { Count: > 0 })
         {
-            return path[0];
+            Draw(_path);
+
+            _currentTarget = _path[0];
+            _path.RemoveAt(0);
+            return _currentTarget;
         }
 
         return null;
@@ -27,9 +43,7 @@ public class PathController : MonoBehaviour
     
     public void Draw(List<Node> path)
     {
-        Grid grid = FindObjectOfType<Grid>();
-        
-        foreach (var current in grid.Graph.Values)
+        foreach (var current in _grid.Graph.Values)
         {
             current.ResetColor();
         }
@@ -37,6 +51,18 @@ public class PathController : MonoBehaviour
         foreach (var n in path)
         {
             n.ChangeColor(_pathColor);
+        }
+    }
+
+    public void SelectPathfindingAlgorithm()
+    {
+        if (_bUseDijsktra)
+        {
+            _pathfinding = new Dijkstra(_grid);
+        }
+        else
+        {
+            _pathfinding = new AStar(_grid);
         }
     }
 }

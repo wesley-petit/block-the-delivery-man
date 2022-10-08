@@ -4,8 +4,12 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
-	[HideInInspector] public float Cost;
-	[HideInInspector] public Node Predecessor;
+	[field:SerializeField] public float GraphCost { get; private set; } = 1;
+	public float RealCost { get; set; }
+	public float HeuristicCost { get; set; }
+	public Node Predecessor { get; set; }
+
+	public float EstimateCosts => RealCost + HeuristicCost;
 	
 	[SerializeField] private Color _hoverColor = new Color();
 	[SerializeField] private Color _notEnoughtMoneyColor = new Color(); // Couleur si le joueur n'a pas assez de'argent pour construire un item

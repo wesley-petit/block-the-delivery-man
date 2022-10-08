@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class AgentController : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class AgentController : MonoBehaviour
 		_characterMovement.Teleport(_currentTarget.Position);
 	}
 
-private void Update()
+	private void Update()
 	{
 		if (!_currentTarget)
 		{
@@ -27,7 +25,7 @@ private void Update()
 
 		if (_characterMovement.IsReachingTarget(_currentTarget.BuildPosition))
 		{
-			_currentTarget = _pathController.GetNextTarget(_currentTarget);
+			_currentTarget = _pathController.GetNextTarget();
 		}
 	}
 	
@@ -64,3 +62,4 @@ private void Update()
 		// _nextTarget = _pathfinding.GetTargetNode;
 	}
 }
+

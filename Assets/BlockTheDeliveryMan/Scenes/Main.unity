@@ -227,8 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -245,7 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &15823422
 PrefabInstance:
@@ -350,8 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -368,7 +365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &28180455
 PrefabInstance:
@@ -473,8 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -491,7 +486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &34098708
 PrefabInstance:
@@ -827,8 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -845,7 +838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &79265881
 PrefabInstance:
@@ -1100,8 +1092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -1118,7 +1109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &213864109
 PrefabInstance:
@@ -1223,8 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -1241,7 +1230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &223000021
 PrefabInstance:
@@ -1743,8 +1731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -1761,7 +1748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &308437180
 PrefabInstance:
@@ -2017,7 +2003,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea9713741b9f2345a1d8b1289dbce95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gapBetweenEachNodes: 5
 --- !u!4 &334787051
 Transform:
   m_ObjectHideFlags: 0
@@ -2288,6 +2273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2511,8 +2497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -2529,7 +2514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &470028385
 PrefabInstance:
@@ -2709,8 +2693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -2727,7 +2710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &557928354
 PrefabInstance:
@@ -2982,8 +2964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -3000,7 +2981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &629826568
 PrefabInstance:
@@ -3266,8 +3246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -3284,7 +3263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1 &705507993
 GameObject:
@@ -3558,8 +3536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -3576,7 +3553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &737779641
 PrefabInstance:
@@ -3763,7 +3739,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 334787051}
-  - {fileID: 1365382448}
+  - {fileID: 8994735359783553689}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4157,8 +4133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -4175,7 +4150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &939252746
 PrefabInstance:
@@ -4441,8 +4415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -4459,7 +4432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &989266198
 PrefabInstance:
@@ -4935,8 +4907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -4953,7 +4924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1053155075
 PrefabInstance:
@@ -5208,8 +5178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -5226,7 +5195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1127974285
 PrefabInstance:
@@ -5331,8 +5299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -5349,7 +5316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1134524522
 PrefabInstance:
@@ -5723,8 +5689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -5741,7 +5706,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1 &1225975571
 GameObject:
@@ -5880,8 +5844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -5898,7 +5861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1282830290
 PrefabInstance:
@@ -6250,8 +6212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -6268,7 +6229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1322337602
 PrefabInstance:
@@ -6381,12 +6341,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1365382448 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-    type: 3}
-  m_PrefabInstance: {fileID: 8982690345148740182}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1396306162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6490,8 +6444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -6508,7 +6461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1406534912
 PrefabInstance:
@@ -6613,8 +6565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -6631,7 +6582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1 &1407845005
 GameObject:
@@ -6813,8 +6763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -6831,7 +6780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1478075270
 PrefabInstance:
@@ -6936,8 +6884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -6954,7 +6901,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1489215654
 PrefabInstance:
@@ -7635,8 +7581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -7653,7 +7598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1620058491
 PrefabInstance:
@@ -7758,8 +7702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -7776,7 +7719,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1626183443
 PrefabInstance:
@@ -7881,8 +7823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -7899,7 +7840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1 &1675824471
 GameObject:
@@ -8056,8 +7996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -8074,7 +8013,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1692282595
 PrefabInstance:
@@ -8441,8 +8379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -8459,7 +8396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1808088629
 PrefabInstance:
@@ -8789,8 +8725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -8807,7 +8742,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1 &1884704427
 GameObject:
@@ -9349,8 +9283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -9367,7 +9300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &1999990290
 PrefabInstance:
@@ -9886,8 +9818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a840a7054e6fe504281d3483202e197e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cost: 0
-  Predecessor: {fileID: 0}
+  <GraphCost>k__BackingField: 1
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
@@ -9904,7 +9835,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481715caacfde1e469d5d768447e5dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
   _endIndicator: {fileID: 251215371}
 --- !u!1001 &2136003457
 PrefabInstance:
@@ -10148,6 +10078,90 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1064092285227708989, guid: 66466d32a944f4e4b938b2bed1fdadd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 66466d32a944f4e4b938b2bed1fdadd5, type: 3}
+--- !u!1001 &1756251394030761750
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 764418972}
+    m_Modifications:
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275450920489911626, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: _grid
+      value: 
+      objectReference: {fileID: 334787050}
+    - target: {fileID: 7275450920489911626, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: _gameState
+      value: 
+      objectReference: {fileID: 1505899386}
+    - target: {fileID: 7275450920489911626, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: _bUseDijsktra
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7903585652246298938, guid: 9d5ca423d98c01f49b974564edaddcc0,
+        type: 3}
+      propertyPath: m_Name
+      value: DeliveryMan
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9d5ca423d98c01f49b974564edaddcc0, type: 3}
 --- !u!1001 &4521454957493864835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10228,130 +10242,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4521454957493864835}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8982690345148740182
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 764418972}
-    m_Modifications:
-    - target: {fileID: 1365382442, guid: b208a6607e7452840ba1b52e9c53da72, type: 3}
-      propertyPath: _grid
-      value: 
-      objectReference: {fileID: 334787050}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 34715299875961039, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 673487525910987898, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: m_Name
-      value: DeliveryMan
-      objectReference: {fileID: 0}
-    - target: {fileID: 3513358015692406064, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: _endNode
-      value: 
-      objectReference: {fileID: 58387889}
-    - target: {fileID: 3513358015692406064, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: _gameState
-      value: 
-      objectReference: {fileID: 1505899386}
-    - target: {fileID: 3513358015692406064, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: _startNode
-      value: 
-      objectReference: {fileID: 1620058494}
-    - target: {fileID: 3513358015692406064, guid: b208a6607e7452840ba1b52e9c53da72,
-        type: 3}
-      propertyPath: _pathController
-      value: 
-      objectReference: {fileID: 8982690345148740188}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b208a6607e7452840ba1b52e9c53da72, type: 3}
---- !u!1 &8982690345148740183 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 673487525910987898, guid: b208a6607e7452840ba1b52e9c53da72,
+--- !u!4 &8994735359783553689 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7245391786518494607, guid: 9d5ca423d98c01f49b974564edaddcc0,
     type: 3}
-  m_PrefabInstance: {fileID: 8982690345148740182}
+  m_PrefabInstance: {fileID: 1756251394030761750}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8982690345148740185 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1365382442, guid: b208a6607e7452840ba1b52e9c53da72,
-    type: 3}
-  m_PrefabInstance: {fileID: 8982690345148740182}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8982690345148740183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d1b04a53c6f7784db45084ad6bff949, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8982690345148740188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8982690345148740183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b0a3f402c5f074b9e8f0e7c8fc892d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameState: {fileID: 1505899386}
-  _pathfinding: {fileID: 8982690345148740185}
-  _pathColor: {r: 1, g: 0.9903463, b: 0, a: 1}
-  _pathProfile: []
