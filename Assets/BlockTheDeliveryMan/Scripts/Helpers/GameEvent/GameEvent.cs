@@ -11,7 +11,21 @@ public abstract class GameEvent<T> : ScriptableObject
 {
     private Action<T> _listeners;
 
-    public void Raise(T value) => _listeners?.Invoke(value);
+    public void Raise(T value)
+    {
+        if (_listeners == null) return;
+        
+        foreach (var current in _listeners.GetInvocationList())
+        {
+            if (current.Target.Equals(null))
+            {
+                Debug.LogError($"Memory Leak - An object with {current.Method} as a listener has been destroyed, but he doesn't unregister from {name}.");
+                continue;
+            }
+
+            current.DynamicInvoke(value);
+        }
+    }
 
     public void RegisterListener(Action<T> listener)
     {
