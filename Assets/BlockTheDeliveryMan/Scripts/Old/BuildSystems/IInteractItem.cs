@@ -1,4 +1,4 @@
 public interface IInteractItem
 {
-	public void Interact(AgentController agent);
+	// public void Interact(AgentController agent);
 }
