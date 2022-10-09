@@ -1,25 +1,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Define an algorithm of finding the shortest path in a graph with positive cost
+/// </summary>
 public abstract class Pathfinding
 {
-	protected readonly Grid _grid;
+	/// <summary>
+	/// Search the shortest path between start and end edges from a given graph.
+	/// </summary>
+	/// <param name="start"></param>
+	/// <param name="end"></param>
+	/// <param name="graph"></param>
+	public abstract List<Edge> GetShortestPath(in Edge start, in Edge end, in Graph graph);
 
-	protected Pathfinding(Grid grid) => _grid = grid;
-	
-	public abstract List<Node> GetShortestPath(in Node start, in Node end);
-	
-	// Retrace path when reaching end node at the end of Pathfinding
-	protected List<Node> ConstructPath(in Node start, in Node end)
+	/// <summary>
+	/// If any, return a path of edges from start to end
+	/// </summary>
+	/// <param name="start">Edge which will stop the path construction</param>
+	/// <param name="end">Edge use as end in the path</param>
+	protected List<Edge> ConstructPath(in Edge start, in Edge end)
 	{
-		List<Node> path = new();
-		Node temp = end;
-        
+		List<Edge> path = new();
+		Edge temp = end;
+    
 		while (temp != start)
 		{
 			if (!temp)
 			{
-				Debug.LogWarning("No path available.");
+				Debug.LogError("No path available.");
 				path.Clear();
 				break;
 			}

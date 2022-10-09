@@ -1,17 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DesactiveItem : MonoBehaviour
 {
-    // Ce Script est à mettre sur l'élément parent à desactivé comportant l'animator
+    // Ce Script est ï¿½ mettre sur l'ï¿½lï¿½ment parent ï¿½ desactivï¿½ comportant l'animator
     // Il doit se faire appeler avec une animation
 
     private void OnEnable()
     {
-        this.GetComponent<Animator>().StopPlayback();
-        this.GetComponent<Animator>().Update(0f);
-        this.GetComponent<Animator>().enabled = false;
-        this.gameObject.SetActive(false);
+        GetComponent<Animator>().StopPlayback();
+        GetComponent<Animator>().Update(0f);
+        GetComponent<Animator>().enabled = false;
+        gameObject.SetActive(false);
     }
 }

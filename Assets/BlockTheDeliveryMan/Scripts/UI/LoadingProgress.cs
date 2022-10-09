@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -7,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadingProgress : MonoBehaviour
 {
-    // Cet élément est le parent du panel de loading
+    // Cet Ã©lÃ©ment est le parent du panel de loading
 
     private int indexScene;
     [SerializeField] private TextMeshProUGUI text_loading;
@@ -15,15 +14,13 @@ public class LoadingProgress : MonoBehaviour
     [SerializeField] private GameObject UIPanel_Loading;
     private bool loadScene;
 
-    void Start()
+    private void Start()
     {
-        Helpers.loadingProgress = this;
+        Helpers.LoadingProgress = this;
         DontDestroyOnLoad(this.gameObject);
         sliderBar.gameObject.SetActive(false);
-
     }
 
-    // Update is called once per frame
     public void LoadScene(int index)
     {
         if (loadScene == false)
@@ -31,13 +28,11 @@ public class LoadingProgress : MonoBehaviour
             indexScene = index;
             loadScene = true;
             Show();
-            StartCoroutine(LoadAsyncScene());
-
+            StartCoroutine(LoadAsyncScene_Coroutine());
         }
-        
-
     }
-    private IEnumerator LoadAsyncScene()
+    
+    private IEnumerator LoadAsyncScene_Coroutine()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexScene);
         if (indexScene > 1)
@@ -55,7 +50,7 @@ public class LoadingProgress : MonoBehaviour
 
         loadScene = false;
         Hide();
-        StopCoroutine(LoadAsyncScene());
+        StopCoroutine(LoadAsyncScene_Coroutine());
     }
 
     private void Hide()

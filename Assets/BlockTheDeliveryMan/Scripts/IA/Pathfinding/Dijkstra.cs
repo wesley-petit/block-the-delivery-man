@@ -4,44 +4,39 @@ using System.Linq;
 
 public class Dijkstra : Pathfinding
 {
-    public Dijkstra(Grid grid) : base(grid) { }
-
-    public override List<Node> GetShortestPath(in Node start, in Node end)
+    public override List<Edge> GetShortestPath(in Edge start, in Edge end, in Graph graph)
     {
-        List<Node> nodeNotVisited = new List<Node>(); 
+        List<Edge> notVisited = new List<Edge>();
+        List<Edge> edges = graph.GetEdges();
         
         // Reset all cost and path previously made
-        foreach (Node node in _grid.Graph.Values)
+        foreach (Edge e in edges)
         {
-            node.RealCost = Mathf.Infinity;
-            node.Predecessor = null;
-            nodeNotVisited.Add(node);
+            e.RealCost = Mathf.Infinity;
+            e.Predecessor = null;
+            notVisited.Add(e);
         }
         start.RealCost = 0f;
 
         // Search the shortest path
-        while (0 < nodeNotVisited.Count)
+        while (0 < notVisited.Count)
         {
-            // Select a node with the lowest cost and that has not been visited
-            Node nearestNode = _grid.Graph.Values.OrderBy(k => k.RealCost).First(k => nodeNotVisited.Contains(k));
-            nodeNotVisited.Remove(nearestNode);
+            // Select an edge with the lowest cost and that has not been visited
+            Edge nearestEdge = edges.OrderBy(k => k.RealCost).First(k => notVisited.Contains(k));
+            notVisited.Remove(nearestEdge);
 
             // Update cost of all neighbors with the shortest path at this moment
-            foreach (var neighbor in _grid.GetNeighborsFrom(nearestNode.Position))
+            foreach (var neighbor in graph.GetNeighbors(nearestEdge))
             {
-                float currentCost = nearestNode.RealCost + neighbor.GraphCost;
+                float currentCost = nearestEdge.RealCost + neighbor.GraphCost;
                 if (currentCost < neighbor.RealCost)
                 {
                     neighbor.RealCost = currentCost;
-                    neighbor.Predecessor = nearestNode;
+                    neighbor.Predecessor = nearestEdge;
                 }
             }
 
-            // Reach the end
-            if (nearestNode == end)
-            {
-                break;
-            }
+            if (nearestEdge == end) { break; }
         }
 
         return ConstructPath(start, end);

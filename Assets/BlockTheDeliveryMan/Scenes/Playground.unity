@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,6 +150,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &14937727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,6 +257,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &34997064
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +270,7 @@ GameObject:
   - component: {fileID: 34997068}
   - component: {fileID: 34997067}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,9 +286,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.374, z: 0.396}
   m_LocalScale: {x: 0.2, y: 0.25, z: 0.2}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1359220986}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &34997067
 MeshRenderer:
@@ -299,6 +302,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -443,6 +447,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &176566171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -549,6 +554,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &236676212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -656,6 +662,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.2, z: 0.3}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1601836266}
   m_RootOrder: 0
@@ -671,6 +678,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -800,7 +808,7 @@ GameObject:
   - component: {fileID: 283128620}
   - component: {fileID: 283128619}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: HandleBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,9 +824,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.575, z: 0.4}
   m_LocalScale: {x: 0.3, y: 0.15, z: 0.3}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1359220986}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &283128619
 MeshRenderer:
@@ -831,6 +840,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1048,6 +1058,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!4 &422336078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1064092285227708990, guid: 66466d32a944f4e4b938b2bed1fdadd5,
@@ -1066,7 +1077,7 @@ GameObject:
   - component: {fileID: 524335820}
   - component: {fileID: 524335819}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1082,9 +1093,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1359220986}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &524335819
 MeshRenderer:
@@ -1097,6 +1109,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1162,6 +1175,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &567804359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1347,6 +1361,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &703349594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1447,6 +1462,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!4 &703349597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1064092285227708990, guid: 66466d32a944f4e4b938b2bed1fdadd5,
@@ -1480,6 +1496,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &743527470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1586,6 +1603,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &746661379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1870,6 +1888,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &810407253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1976,6 +1995,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &838804830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,6 +2075,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2086,6 +2107,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &903292905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2273,6 +2295,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1854494731}
   m_Father: {fileID: 0}
@@ -2290,9 +2313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d205ae82956b50469440d7327dfa6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startNode: {fileID: 703349596}
-  _endNode: {fileID: 1642118375}
-  _targetNode: {fileID: 1362670549}
+  _characterMovement: {fileID: 0}
 --- !u!114 &966743889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2317,6 +2338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e29199491924694eb41c37b32c6f929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movementTime: 5
+  _validReachDistance: 0.01
 --- !u!1 &967387181
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,6 +2429,7 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2510,6 +2534,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!4 &980812016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1064092285227708990, guid: 66466d32a944f4e4b938b2bed1fdadd5,
@@ -2622,6 +2647,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &1209927086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2807,6 +2833,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &1236688313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2913,6 +2940,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &1295987416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3007,7 +3035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1359220986
 Transform:
   m_ObjectHideFlags: 0
@@ -3018,11 +3046,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 6.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 524335817}
   - {fileID: 1601836266}
-  - {fileID: 34997065}
+  - {fileID: 524335817}
   - {fileID: 283128617}
+  - {fileID: 34997065}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3132,6 +3161,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &1381366769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1064092285227708978, guid: 66466d32a944f4e4b938b2bed1fdadd5,
@@ -3159,6 +3189,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &1461638122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3265,6 +3296,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &1601836265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3291,11 +3323,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 242067083}
   - {fileID: 1834404315}
   m_Father: {fileID: 1359220986}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1642118370 stripped
 GameObject:
@@ -3324,6 +3357,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &1669328267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3430,6 +3464,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &1707618077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1064092285227708978, guid: 66466d32a944f4e4b938b2bed1fdadd5,
@@ -3457,6 +3492,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1001 &1708783917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3642,6 +3678,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &1834404314
 GameObject:
   m_ObjectHideFlags: 0
@@ -3670,6 +3707,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.2, z: -0.3}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1601836266}
   m_RootOrder: 1
@@ -3685,6 +3723,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3829,6 +3868,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &1854494730
 GameObject:
   m_ObjectHideFlags: 0
@@ -3857,6 +3897,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 966743887}
   m_RootOrder: 0
@@ -3872,6 +3913,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -3937,6 +3979,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &1925507528
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,6 +4020,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -4021,6 +4065,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 422336078}
   - {fileID: 1362670547}
@@ -4160,6 +4205,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &2035856736 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1064092285227708978, guid: 66466d32a944f4e4b938b2bed1fdadd5,
@@ -4187,6 +4233,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
 --- !u!1 &2086869200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1064092285227708978, guid: 66466d32a944f4e4b938b2bed1fdadd5,
@@ -4214,3 +4261,4 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1, b: 0.8352941, a: 1}
   _notEnoughtMoneyColor: {r: 1, g: 0.043137256, b: 0, a: 1}
   _positionOffset: {x: 0, y: 0.5, z: 0}
+  <Occupied>k__BackingField: {fileID: 0}
