@@ -15,14 +15,25 @@ public class GameManager : MonoBehaviour
     [SerializeField, Range(0f, 5f)] private float _spawnDelayInSeconds = 0.5f;
 
     private AgentController _player;
+    [SerializeField] private CreateMap createMap;
 
     private void Start()
     {
+        if( _start== null)
+        {
+            _start = createMap.start.GetComponent<Edge>();
+        }
+        if (_end == null)
+        {
+            _end = createMap.end.GetComponent<Edge>();
+        }
         onSetupStart.Raise(_start);
         onMoveDelivery.Raise(_end);
         
         StartCoroutine(SpawnPlayer_Coroutine());
     }
+
+
     
     private IEnumerator SpawnPlayer_Coroutine()
     {
