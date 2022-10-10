@@ -8,9 +8,11 @@ public class SetChildrenName : MonoBehaviour
 {
 	[SerializeField] private string _childrenName = "";
 
-	private void OnValidate() => SetName();
+	//private void OnValidate() => SetName();
+    private void Start() => SetName();
 
-	[ContextMenu("Set Children Name", false, 0)]
+
+    [ContextMenu("Set Children Name", false, 0)]
 	public void SetName()
 	{
 		Transform parent = transform;

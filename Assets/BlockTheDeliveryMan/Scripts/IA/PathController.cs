@@ -17,7 +17,7 @@ public class PathController : MonoBehaviour
     /// Visualize the shortest path
     /// </summary>
     [SerializeField] private bool _bVisualizePath = true;
-    
+
     private Graph _graph;
     
     /// <summary>
@@ -30,7 +30,7 @@ public class PathController : MonoBehaviour
     /// </summary>
     private List<Edge> _currentPath = new();
 
-    private void Awake() => CreateGraph();
+    public Graph Graph { get => _graph; set => _graph = value; }
 
     private void OnEnable()
     {
@@ -117,17 +117,16 @@ public class PathController : MonoBehaviour
         _currentPath.RemoveAt(0);
         return _nextEdge.GetPosition;
     }
-    
-    /// <summary>
-    /// Store all edges of the scene
-    /// </summary>
-    private void CreateGraph()
-    {
-        Dictionary<Vector3, Edge> edges = new();
-    	if (FindObjectsOfType(typeof(Edge)) is Edge[] temp)
-    		foreach (var n in temp)
-    			edges.Add(n.GetPosition, n);
 
-        _graph = new Graph(edges);
-    }
+    // TEST 
+    //private void Awake() => CreateGraph();
+    //private void CreateGraph()
+    //{
+    //    Dictionary<Vector3, Edge> edges = new();
+    //    if (FindObjectsOfType(typeof(Edge)) is Edge[] temp)
+    //        foreach (var n in temp)
+    //            edges.Add(n.GetPosition, n);
+    //    Graph = new Graph(edges);
+    //}
+
 }

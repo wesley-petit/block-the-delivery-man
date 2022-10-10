@@ -17,35 +17,48 @@ public class CreateMap : MonoBehaviour
     [SerializeField] private GameObject Parent_Building;
     [SerializeField] private GameObject Parent_Node;
 
+    [Header("Config")]
+    [SerializeField] private float nodeSpacing = 4;
+
+
     private Vector3 pos;
     private Quaternion rot = Quaternion.identity;
 
 
-    public GameObject start;
-    public GameObject end;
+    [HideInInspector]
+    public GameObject Start;
+    [HideInInspector]
+    public GameObject End;
+
+    [SerializeField] private PathController pathController;
 
 
     private void Awake()
     {
-        pos = new Vector3(-node.transform.localScale.x, 0, 0);
-        for (int i =0; i < RuntimeText.ReadString(name_DataFileMap).Length; i++)
+        Graph.GAP_BETWEEN_EDGE = nodeSpacing;
+        Start = null;
+        End = null;
+        pos = new Vector3(-nodeSpacing, 0, 0);
+
+        RuntimeText.ReadString(name_DataFileMap);
+        for (int i =0; i < RuntimeText.textFromData.Length; i++)
         {
             
-            switch (RuntimeText.ReadString(name_DataFileMap)[i])
+            switch (RuntimeText.textFromData[i])
             {
                 case 'S': // Start
-                    Instantiate(nodeStart, new Vector3(pos.x + node.transform.localScale.x, pos.y, pos.z), rot, Parent_NodeStart.transform);
-                    start=Instantiate(node, pos = new Vector3(pos.x + node.transform.localScale.x, pos.y, pos.z), rot, Parent_NodeStart.transform);
+                    Instantiate(nodeStart, new Vector3(pos.x + nodeSpacing, pos.y, pos.z), rot, Parent_NodeStart.transform);
+                    Start=Instantiate(node, pos = new Vector3(pos.x + nodeSpacing, pos.y, pos.z), rot, Parent_Node.transform);
                     break;
                 case 'E': // End
-                    Instantiate(nodeEnd, new Vector3(pos.x + node.transform.localScale.x, pos.y, pos.z), rot, Parent_NodeEnd.transform);
-                    end=Instantiate(node, pos = new Vector3(pos.x + node.transform.localScale.x, pos.y, pos.z), rot, Parent_NodeEnd.transform);
+                    Instantiate(nodeEnd, new Vector3(pos.x + nodeSpacing, pos.y, pos.z), rot, Parent_NodeEnd.transform);
+                    End=Instantiate(node, pos = new Vector3(pos.x + nodeSpacing, pos.y, pos.z), rot, Parent_Node.transform);
                     break;
                 case '.': // Node
                     CreateNode(node, Parent_Node);
                     break;
                 case '/': // Retour à la ligne
-                    pos = new Vector3(-node.transform.localScale.x, pos.y, pos.z - node.transform.localScale.z);
+                    pos = new Vector3(-nodeSpacing, pos.y, pos.z - nodeSpacing);
                     break;
                 case 'X': // Obstacle 
                     CreateNode(building, Parent_Building);
@@ -53,23 +66,25 @@ public class CreateMap : MonoBehaviour
 
             }
         }
-        
-        if (start = null)
-        {
-            Debug.Log("start = null");
-        }
-        else
-        {
-            Debug.Log("start est OK");
-        }
+        CreateGraph();
+
+
     }
     private void CreateNode(GameObject node, GameObject parent)
     {
+        Instantiate(node, pos = new Vector3(pos.x + nodeSpacing, pos.y, pos.z), rot, parent.transform);
+    }
 
-        Instantiate(node, pos = new Vector3(pos.x + node.transform.localScale.x, pos.y, pos.z), rot, parent.transform);
-
-  
-        
+    /// <summary>
+    /// Store all edges of the scene
+    /// </summary>
+    private void CreateGraph()
+    {
+        Dictionary<Vector3, Edge> edges = new();
+        if (FindObjectsOfType(typeof(Edge)) is Edge[] temp)
+            foreach (var n in temp)
+                edges.Add(n.GetPosition, n);
+        pathController.Graph = new Graph(edges); 
     }
 
 }

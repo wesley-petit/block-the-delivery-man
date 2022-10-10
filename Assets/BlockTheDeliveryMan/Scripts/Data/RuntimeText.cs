@@ -3,10 +3,9 @@ using System.IO;
 
 public static class RuntimeText
 {
-
-    public static string ReadString(string name_DataText)
+    public static string textFromData { get; set;}
+    public static void ReadString(string name_DataText)
     {
-        string textFromData;
         string path = PathApp() + name_DataText;
         //Read the text from directly from the test.txt file
         StreamReader reader = new StreamReader(path);
@@ -14,7 +13,6 @@ public static class RuntimeText
 
         Debug.Log("ma var text : " + textFromData);
         reader.Close();
-        return textFromData;
     }
 
     static string PathApp()

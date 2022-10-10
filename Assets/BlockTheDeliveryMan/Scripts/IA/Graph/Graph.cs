@@ -10,7 +10,7 @@ public class Graph
 	public Graph(Dictionary<Vector3, Edge> allEdges) => Edges = allEdges;
 
 	private Dictionary<Vector3, Edge> Edges { get; }
-	private const float GAP_BETWEEN_EDGE = 5f;
+	public static float GAP_BETWEEN_EDGE { get; set; }
 
 	/// <summary>
 	/// Find all neighbors around a given position

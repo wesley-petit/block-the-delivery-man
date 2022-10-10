@@ -21,11 +21,11 @@ public class GameManager : MonoBehaviour
     {
         if( _start== null)
         {
-            _start = createMap.start.GetComponent<Edge>();
+            _start = createMap.Start.GetComponent<Edge>();
         }
         if (_end == null)
         {
-            _end = createMap.end.GetComponent<Edge>();
+            _end = createMap.End.GetComponent<Edge>();
         }
         onSetupStart.Raise(_start);
         onMoveDelivery.Raise(_end);
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator SpawnPlayer_Coroutine()
     {
         yield return new WaitForSeconds(_spawnDelayInSeconds);
-        
+        Debug.Log("_start.GetPosition: " + _start.GetPosition);
         _player = Instantiate(_agentControllerPrefab, _start.GetPosition, Quaternion.identity, transform);
         _player.name = "Player";
     }
