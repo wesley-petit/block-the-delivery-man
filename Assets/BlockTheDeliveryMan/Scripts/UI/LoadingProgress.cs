@@ -35,9 +35,9 @@ public class LoadingProgress : MonoBehaviour
     private IEnumerator LoadAsyncScene_Coroutine()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(indexScene);
-        if (indexScene > 1)
+        if (indexScene > 0)
         {
-            SceneManager.LoadScene(0,LoadSceneMode.Additive);
+            SceneManager.LoadScene("Option",LoadSceneMode.Additive);
         }
         
         while (!asyncLoad.isDone)

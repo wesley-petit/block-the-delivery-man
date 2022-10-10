@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class OptionPanel : MonoBehaviour
 {
-    public void BackMenu()
+    public void BackMenu(int index)
     {
-        Helpers.LoadScene(1); // return to menu
+        Helpers.LoadScene(index); // return to menu
     }
 }
