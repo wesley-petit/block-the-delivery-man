@@ -5,7 +5,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public GameObject obstacle;
-    //TO DO Faire un object pooling pour les obstacles
+    //TODO Faire un object pooling pour les obstacles
     public void ObstacleCreation(GameObject node,float duree)
     {
         node.SetActive(false);

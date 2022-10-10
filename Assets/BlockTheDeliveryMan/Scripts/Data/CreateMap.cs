@@ -6,8 +6,8 @@ public class CreateMap : MonoBehaviour
 {
     [Header("Links")]
     [SerializeField] private PathController pathController;
-    
-    [Header ("Prefabs")]
+
+    [Header("Prefabs")]
     [SerializeField] private GameObject node;
     [SerializeField] private GameObject nodeStart;
     [SerializeField] private GameObject nodeEnd;
@@ -59,7 +59,7 @@ public class CreateMap : MonoBehaviour
                 case '.': // Node
                     CreateNode(node, Parent_Node);
                     break;
-                case '/': // Retour à la ligne
+                case '/': // Retour ï¿½ la ligne
                     pos = new Vector3(-nodeSpacing, pos.y, pos.z - nodeSpacing);
                     break;
                 case 'X': // Obstacle 
@@ -82,8 +82,8 @@ public class CreateMap : MonoBehaviour
     /// </summary>
     private void CreateGraph()
     {
-        Dictionary<Vector3, Edge> edges = new();
-        if (FindObjectsOfType(typeof(Edge)) is Edge[] temp)
+        Dictionary<Vector3, Vertex> edges = new();
+        if (FindObjectsOfType(typeof(Vertex)) is Vertex[] temp)
             foreach (var n in temp)
                 edges.Add(n.GetPosition, n);
         pathController.Graph = new Graph(edges); 

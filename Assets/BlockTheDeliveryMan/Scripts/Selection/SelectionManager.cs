@@ -13,14 +13,14 @@ public class SelectionManager : MonoBehaviour
     /// <summary>
     /// Response to a new or old selection
     /// </summary>
-    private ISelectionResponse _selectionResponse;
+    private ISelectionResponse[] _selectionResponse;
 
     private Transform _currentSelection;
     
     private void Awake()
     {
         _selector = GetComponent<ISelector>();
-        _selectionResponse = GetComponent<ISelectionResponse>();
+        _selectionResponse = GetComponents<ISelectionResponse>();
     }
 
     private void Update()
@@ -44,14 +44,20 @@ public class SelectionManager : MonoBehaviour
         // Deselect current item
         if (_currentSelection)
         {
-            _selectionResponse.OnDeselect(_currentSelection);
+            foreach (var current in _selectionResponse)
+            {
+                current.OnDeselect(_currentSelection);
+            }
         }
-            
+        
         // Select new item
         _currentSelection = selection;
         if (_currentSelection)
         {
-            _selectionResponse.OnSelect(_currentSelection);
+            foreach (var current in _selectionResponse)
+            {
+                current.OnSelect(_currentSelection);
+            }
         } 
     }
 }

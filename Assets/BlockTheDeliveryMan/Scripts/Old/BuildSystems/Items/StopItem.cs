@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StopItem : MonoBehaviour, IBuilder, IInteractItem
+public class StopItem : MonoBehaviour//, IBuilder, IInteractItem
 {
 	[SerializeField] private float _maxLifetime = 4f;
 

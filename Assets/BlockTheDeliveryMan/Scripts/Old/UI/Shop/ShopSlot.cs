@@ -10,19 +10,12 @@ public class ShopSlot : MonoBehaviour
 
 	private ItemBlueprint _itemBlueprint = null;
 
-	// // Initialise les différents liens
-	// public void AddBlueprint(ItemBlueprint newBlueprint)
-	// {
-	// 	if (!newBlueprint)
-	// 	{
-	// 		Debug.LogError("Le blueprint donnée est null.");
-	// 		return;
-	// 	}
-	//
-	// 	_itemBlueprint = newBlueprint;
-	// 	_image.sprite = newBlueprint.Sprite;
-	// 	_costText.SetText($"${newBlueprint.Cost}");
-	// }
-	//
-	// public void SelectItem() => BuildManager.Instance.SelectItemToBuild(_itemBlueprint);
+	public void AddBlueprint(ItemBlueprint newBlueprint)
+	{
+		_itemBlueprint = newBlueprint;
+		_image.sprite = newBlueprint.Sprite;
+		_costText.SetText($"${newBlueprint.Cost}");
+	}
+	
+	public void SelectItem() => BuildManager.Instance.SelectItemToBuild(_itemBlueprint);
 }

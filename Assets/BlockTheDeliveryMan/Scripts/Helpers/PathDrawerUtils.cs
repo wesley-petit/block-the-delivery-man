@@ -10,24 +10,29 @@ public static class PathDrawerUtils
     /// </summary>
     /// <param name="graph"></param>
     /// <param name="path"></param>
-    public static void Draw(in Graph graph, in List<Edge> path)
+    public static void Draw(in Graph graph, in List<Vertex> path)
     {
-        // Reset previous path
-        foreach (var edge in graph.GetEdges())
-        {
-            if (edge.TryGetComponent(out EdgeVisualization edgeVisualization))
-            {
-                edgeVisualization.AwayOffPath();
-            }            
-        }
+        ResetPreviousPath(graph);
         
         // Color final path
-        foreach (var edge in path)
+        foreach (var v in path)
         {
-            if (edge.TryGetComponent(out EdgeVisualization edgeVisualization))
+            if (v.TryGetComponent(out VertexVisualization edgeVisualization))
             {
                 edgeVisualization.OnPath();
             }  
+        }
+    }
+
+    // Reset previous path
+    public static void ResetPreviousPath(in Graph graph)
+    {
+        foreach (var v in graph.GetVertex())
+        {
+            if (v.TryGetComponent(out VertexVisualization edgeVisualization))
+            {
+                edgeVisualization.AwayOffPath();
+            }            
         }
     }
 }

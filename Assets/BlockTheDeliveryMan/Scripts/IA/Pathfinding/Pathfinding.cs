@@ -7,22 +7,22 @@ using UnityEngine;
 public abstract class Pathfinding
 {
 	/// <summary>
-	/// Search the shortest path between start and end edges from a given graph.
+	/// Search the shortest path between start and end vertex from a given graph.
 	/// </summary>
 	/// <param name="start"></param>
 	/// <param name="end"></param>
 	/// <param name="graph"></param>
-	public abstract List<Edge> GetShortestPath(in Edge start, in Edge end, in Graph graph);
+	public abstract List<Vertex> GetShortestPath(in Vertex start, in Vertex end, in Graph graph);
 
 	/// <summary>
-	/// If any, return a path of edges from start to end
+	/// If any, return a path of vertex from start to end
 	/// </summary>
 	/// <param name="start">Edge which will stop the path construction</param>
 	/// <param name="end">Edge use as end in the path</param>
-	protected List<Edge> ConstructPath(in Edge start, in Edge end)
+	protected List<Vertex> ConstructPath(in Vertex start, in Vertex end)
 	{
-		List<Edge> path = new();
-		Edge temp = end;
+		List<Vertex> path = new();
+		Vertex temp = end;
     
 		while (temp != start)
 		{

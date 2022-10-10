@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Edge of a graph with positive costs
+/// Vertex of a graph with positive costs
 /// </summary>
-public class Edge : MonoBehaviour
+public class Vertex : MonoBehaviour
 {
     /// <summary>
     /// Travel cost on the graph from neighbors edges to these current edge
@@ -30,11 +30,11 @@ public class Edge : MonoBehaviour
     private float _realCost;
 
     /// <summary>
-    /// Cost from these edge to the end
+    /// Cost from these vertex to the end
     /// </summary>
     public float HeuristicCost { get; set; }
 
-    public Edge Predecessor { get; set; }
+    public Vertex Predecessor { get; set; }
 
     public float GetTotalCosts => RealCost + HeuristicCost;
     public Vector3 GetPosition => transform.position;
@@ -47,4 +47,7 @@ public class Edge : MonoBehaviour
         RealCost = 0;
         HeuristicCost = 0;
     }
+    
+    //TODO Delete
+    public bool IsReachable { get; set; } = true;
 }

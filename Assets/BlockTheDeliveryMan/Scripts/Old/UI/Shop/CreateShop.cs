@@ -1,32 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-// S'occupe de crée et d'initialiser les différents ShopSlot
+/// <summary>
+/// Create a shop with all items available
+/// </summary>
 public class CreateShop : MonoBehaviour
 {
-	private ItemBlueprint[] _items = new ItemBlueprint[0];
-	[SerializeField] private ShopSlot _prefabSlot = null;
+	[SerializeField] private ShopSlot _prefabSlot;
 
-	// private void Awake()
-	// {
-	// 	// Charge tous les assets
-	// 	_items = Resources.LoadAll<ItemBlueprint>("ItemBlueprints");
-	//
-	// 	CreateShopScreen();
-	// }
-	//
-	// private void CreateShopScreen()
-	// {
-	// 	for (int i = 0; i < _items.Length; i++)
-	// 	{
-	// 		if (!_items[i])
-	// 		{
-	// 			Debug.LogError($"L'item d'index : {i} est null.");
-	// 			continue;
-	// 		}
-	//
-	// 		ShopSlot slot = Instantiate(_prefabSlot, transform);
-	// 		slot.AddBlueprint(_items[i]);
-	// 		slot.name = _items[i].name;
-	// 	}
-	// }
+	private ItemBlueprint[] _items = Array.Empty<ItemBlueprint>();
+
+	private void Awake()
+	{
+		_items = Resources.LoadAll<ItemBlueprint>("ItemBlueprints");
+		CreateShopScreen();
+	}
+
+	/// <summary>
+	/// Create and initialize all shop slot
+	/// </summary>
+	private void CreateShopScreen()
+	{
+		for (int i = 0; i < _items.Length; i++)
+		{
+			ShopSlot slot = Instantiate(_prefabSlot, transform);
+			slot.AddBlueprint(_items[i]);
+			slot.name = _items[i].name;
+		}
+	}
 }

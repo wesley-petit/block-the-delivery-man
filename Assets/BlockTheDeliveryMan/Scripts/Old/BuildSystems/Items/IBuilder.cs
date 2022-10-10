@@ -1,5 +1,10 @@
+using UnityEngine;
+
 public interface IBuilder
 {
-	// public void Build(Node node);
-	// public void UnBuild();
+	public bool IsOccupied();	
+	public Vector3 GetBuildPosition();
+	
+	public void Build(GameObject item, bool moveDelivery);
+	public void UnBuild();
 }

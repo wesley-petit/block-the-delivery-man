@@ -1,17 +1,20 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.Collections;
 
 /// <summary>
 /// Update player path in answer of game events
 /// </summary>
 public class PathController : MonoBehaviour
 {
+    [SerializeField] private IntGameEvent onSwitchAlgorithm;
+    
     [SerializeField] private EdgeGameEvent onSetupStart;
     [SerializeField] private EdgeGameEvent onSwitchDelivery;
     [SerializeField] private VoidGameEvent onGraphChange;
     
-    private Edge _nextEdge;
-    private Edge _deliveryEdge;
+    private Vertex _nextVertex;
+    private Vertex _deliveryVertex;
 
     /// <summary>
     /// Visualize the shortest path
@@ -28,12 +31,14 @@ public class PathController : MonoBehaviour
     /// <summary>
     /// Result of pathfinding between current and end edge.
     /// </summary>
-    private List<Edge> _currentPath = new();
+    private List<Vertex> _currentPath = new();
 
     public Graph Graph { get => _graph; set => _graph = value; }
 
     private void OnEnable()
     {
+        onSwitchAlgorithm.RegisterListener(SwitchAlgorithm);
+        
         onSwitchDelivery.RegisterListener(SetDelivery);
         onSetupStart.RegisterListener(SetStart);
         onGraphChange.RegisterListener(UpdatePath);
@@ -41,30 +46,46 @@ public class PathController : MonoBehaviour
 
     private void OnDisable()
     {
+        onSwitchAlgorithm.UnregisterListener(SwitchAlgorithm);
+        
         onSwitchDelivery.UnregisterListener(SetDelivery);
         onSetupStart.UnregisterListener(SetStart);
         onGraphChange.UnregisterListener(UpdatePath);
     }
 
-    #region Start and end setters
-    private void SetStart(Edge start)
+    private void SwitchAlgorithm(int value)
     {
-        if (!_nextEdge)
+        if (value == 0)
         {
-            _nextEdge = start;
+            _pathfinding = new AStar();
+        }
+        else
+        {
+            _pathfinding = new Dijkstra();
+        }
+        
+        ComputeShortestPath();
+    }
+    
+    #region Start and end setters
+    private void SetStart(Vertex start)
+    {
+        if (!_nextVertex)
+        {
+            _nextVertex = start;
         }
 
-        if (_nextEdge && _deliveryEdge)
+        if (_nextVertex && _deliveryVertex)
         {
             ComputeShortestPath();
         }
     }
 
-    private void SetDelivery(Edge end)
+    private void SetDelivery(Vertex end)
     {
-        _deliveryEdge = end;
+        _deliveryVertex = end;
         
-        if (_nextEdge && _deliveryEdge)
+        if (_nextVertex && _deliveryVertex)
         {
             ComputeShortestPath();
         }
@@ -79,10 +100,10 @@ public class PathController : MonoBehaviour
     private void ComputeShortestPath()
     {
         // Remove cost from previous path, because it's not up to date.
-        foreach (var node in _graph.GetEdges())
+        foreach (var node in _graph.GetVertex())
             node.ResetCost();
         
-        _currentPath = _pathfinding.GetShortestPath(in _nextEdge, in _deliveryEdge, in _graph);
+        _currentPath = _pathfinding.GetShortestPath(in _nextVertex, in _deliveryVertex, in _graph);
 
         if (_bVisualizePath && _currentPath != null)
         {
@@ -113,11 +134,21 @@ public class PathController : MonoBehaviour
             PathDrawerUtils.Draw(in _graph, in _currentPath);
         }
 
-        _nextEdge = _currentPath[0];
+        _nextVertex = _currentPath[0];
         _currentPath.RemoveAt(0);
-        return _nextEdge.GetPosition;
+        return _nextVertex.GetPosition;
     }
 
+    public void TogglePathVisibility()
+    {
+        _bVisualizePath = !_bVisualizePath;
+
+        if (!_bVisualizePath)
+        {
+            PathDrawerUtils.ResetPreviousPath(_graph);
+        }
+    }
+    
     // TEST 
     //private void Awake() => CreateGraph();
     //private void CreateGraph()

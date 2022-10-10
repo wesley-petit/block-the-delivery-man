@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private EdgeGameEvent onMoveDelivery;
     [SerializeField] private EdgeGameEvent onSetupStart;
     
-    [SerializeField] private Edge _start;
-    [SerializeField] private Edge _end;
+    [SerializeField] private Vertex _start;
+    [SerializeField] private Vertex _end;
 
     [Header("Spawn Player")]
     [SerializeField] private AgentController _agentControllerPrefab;
@@ -21,11 +21,11 @@ public class GameManager : MonoBehaviour
     {
         if( _start== null)
         {
-            _start = createMap.Start.GetComponent<Edge>();
+            _start = createMap.Start.GetComponent<Vertex>();
         }
         if (_end == null)
         {
-            _end = createMap.End.GetComponent<Edge>();
+            _end = createMap.End.GetComponent<Vertex>();
         }
         onSetupStart.Raise(_start);
         onMoveDelivery.Raise(_end);
