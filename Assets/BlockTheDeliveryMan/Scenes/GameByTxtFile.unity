@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c340f972eae24459180130ce6df281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name_DataFileMap: test.txt
+  pathController: {fileID: 1523858881}
   node: {fileID: 1064092285227708978, guid: 66466d32a944f4e4b938b2bed1fdadd5, type: 3}
   nodeStart: {fileID: 6301484857978982600, guid: 376219cb43e7f2745968619f13027d87,
     type: 3}
@@ -1323,10 +1323,10 @@ MonoBehaviour:
   Parent_NodeEnd: {fileID: 989388726}
   Parent_Building: {fileID: 1027721019}
   Parent_Node: {fileID: 1594262090}
-  nodeSpacing: 5
+  nodeSpacing: 4
+  name_DataFileMap: test.txt
   Start: {fileID: 0}
   End: {fileID: 0}
-  pathController: {fileID: 1523858881}
 --- !u!1001 &2063049485
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CreateMap : MonoBehaviour
 {
-    [SerializeField] private string name_DataFileMap;
+    [Header("Links")]
+    [SerializeField] private PathController pathController;
+    
     [Header ("Prefabs")]
     [SerializeField] private GameObject node;
     [SerializeField] private GameObject nodeStart;
@@ -19,7 +21,7 @@ public class CreateMap : MonoBehaviour
 
     [Header("Config")]
     [SerializeField] private float nodeSpacing = 4;
-
+    [SerializeField] private string name_DataFileMap;
 
     private Vector3 pos;
     private Quaternion rot = Quaternion.identity;
@@ -30,7 +32,7 @@ public class CreateMap : MonoBehaviour
     [HideInInspector]
     public GameObject End;
 
-    [SerializeField] private PathController pathController;
+    
 
 
     private void Awake()
