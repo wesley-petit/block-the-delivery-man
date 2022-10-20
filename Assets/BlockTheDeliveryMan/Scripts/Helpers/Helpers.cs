@@ -16,5 +16,10 @@ public static class Helpers
         Application.Quit();
     }
     #endregion
-
+    
+    public static Vector3 DirFromAngle(float angleInDegrees, Transform ownerTransform)
+    {
+        angleInDegrees += ownerTransform.eulerAngles.y;
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
 }
