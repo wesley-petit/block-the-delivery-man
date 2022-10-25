@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 4025516752347868398}
   - component: {fileID: 4276370277406285047}
   - component: {fileID: 2827044710716143431}
-  - component: {fileID: 148827222978003741}
   - component: {fileID: 989336842263985122}
   m_Layer: 0
   m_Name: Boid
@@ -149,9 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fov: {fileID: 292165666614761292}
-  _maxDirection: 1
   _speed: 5
-  _rotationSpeed: 20
+  _rotationSpeed: 5
 --- !u!114 &4604589055583659097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc8ee12d6daf9b4293f2a7b8396070c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _force: 20
+  _force: 30
   _fov: {fileID: 6541658383936641223}
 --- !u!114 &4025516752347868398
 MonoBehaviour:
@@ -209,26 +207,16 @@ MonoBehaviour:
   _force: 5000
   _sensorsAngleInDegrees:
   - 0
-  - 45
-  - -45
-  _sensorLength: 4
+  - 30
+  - -30
+  - 60
+  - -60
+  - 90
+  - -90
+  _sensorLength: 2
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &148827222978003741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6718606297396925896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c61984ff9c4af948b8ea3881768c4bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _force: 0
-  _targetTag: CrowdLeader
 --- !u!114 &989336842263985122
 MonoBehaviour:
   m_ObjectHideFlags: 0

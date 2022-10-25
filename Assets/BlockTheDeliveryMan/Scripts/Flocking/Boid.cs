@@ -5,12 +5,12 @@ using Random = UnityEngine.Random;
 public class Boid : MonoBehaviour
 {
     [SerializeField] private FieldOfView _fov;
-    [SerializeField] private float _maxDirection = 1.0f;
     [SerializeField] private float _speed = 3.0f;
     [SerializeField] private float _rotationSpeed = 20.0f;
     
     public Vector3 GetPosition => _thisTransform.position;
     public Vector3 Heading { get; private set; }
+    private BoidManager _boidManager;
 
     private IScanReceiver[] _scanReceivers;
     private ISteeringBehavior[] _steeringBehaviors;
@@ -33,44 +33,24 @@ public class Boid : MonoBehaviour
     private void Update()
     {
         SendScan(Scan());
-
-        foreach (var current in _steeringBehaviors)
-        {
-            var temp = current.ComputeHeading();
-            if (temp.HasValue)
-            {
-                Heading += temp.Value;
-            }
-        }
-        
-        // if (_maxDirection < Mathf.Abs(_direction.x) || _maxDirection < Mathf.Abs(_direction.z))
-        // {
-        //     float scaleFactor = _maxDirection / Mathf.Max(_direction.x, _direction.z);
-        //     _direction *= scaleFactor;
-        // }
+        ComputeAllHeading();
         
         if (Heading != Vector3.zero)
         {
-            Heading = Vector3.ClampMagnitude(Heading, 360);
-            var headingInQuaternion = Quaternion.LookRotation(Heading);
-            
-            Quaternion rotation = Quaternion.Slerp(
-                _thisTransform.rotation,
-                headingInQuaternion, 
-                _rotationSpeed * Time.deltaTime);
-            
-            _thisTransform.rotation = rotation;
+            ApplyHeading();
         }
-        
         _thisTransform.position += Time.deltaTime * _speed * _thisTransform.forward;
+    }
+
+    public void Init(BoidManager boidManager)
+    {
+        _boidManager = boidManager;
     }
 
     private List<Boid> Scan()
     {
-        Boid[] boids = FindObjectsOfType<Boid>();
-
         List<Boid> visibleTarget = new List<Boid>();
-        foreach (var b in boids)
+        foreach (var b in _boidManager.Boids)
         {
             if (b == this)
                 continue;
@@ -94,5 +74,30 @@ public class Boid : MonoBehaviour
     {
         foreach (var receiver in _scanReceivers) 
             receiver.OnScanReceive(crowds);
+    }
+
+    private void ComputeAllHeading()
+    {
+        foreach (var current in _steeringBehaviors)
+        {
+            var temp = current.ComputeHeading();
+            if (temp.HasValue)
+            {
+                Heading += temp.Value;
+            }
+        }
+    }
+
+    private void ApplyHeading()
+    {
+        Heading = Vector3.ClampMagnitude(Heading, 359.0f);
+        var headingInQuaternion = Quaternion.LookRotation(Heading);
+            
+        Quaternion rotation = Quaternion.Slerp(
+            _thisTransform.rotation,
+            headingInQuaternion, 
+            _rotationSpeed * Time.deltaTime);
+        Debug.Log(_rotationSpeed * Time.deltaTime);
+        _thisTransform.rotation = rotation;
     }
 }
