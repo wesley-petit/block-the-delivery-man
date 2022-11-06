@@ -17,7 +17,7 @@ public class AlignmentMovement : FlokingMovement
     public override Optional<Vector3> ComputeHeading()
     {
         if (_crowdsVisible.Count <= 0)
-            return default;
+            return new Optional<Vector3>();
         
         Vector3 avgHeading = Vector3.zero;
         foreach (var boid in _crowdsVisible)

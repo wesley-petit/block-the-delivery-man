@@ -86,18 +86,42 @@ public class Boid : MonoBehaviour
                 Heading += temp.Value;
             }
         }
+        
+        // Heading.Normalize();
     }
 
     private void ApplyHeading()
     {
-        Heading = Vector3.ClampMagnitude(Heading, 359.0f);
+        // Heading = Vector3.ClampMagnitude(Heading, 359.0f);
+        Heading = ClampVector(Heading);
         var headingInQuaternion = Quaternion.LookRotation(Heading);
             
         Quaternion rotation = Quaternion.Slerp(
             _thisTransform.rotation,
             headingInQuaternion, 
             _rotationSpeed * Time.deltaTime);
-        Debug.Log(_rotationSpeed * Time.deltaTime);
+        
+        // Debug.Log(_rotationSpeed * Time.deltaTime);
+        
         _thisTransform.rotation = rotation;
+    }
+
+    private Vector3 ClampVector(in Vector3 a, float maxValue = 360.0f)
+    {
+        float x = a.x, y = a.y, z = a.z;
+        if (maxValue < Mathf.Abs(a.x))
+        {
+            x = a.x - Mathf.Sign(a.x) * maxValue;
+        }
+        if (maxValue < Mathf.Abs(a.y))
+        {
+            y = a.y - Mathf.Sign(a.y) * maxValue;
+        }
+        if (maxValue < Mathf.Abs(a.z))
+        {
+            z = a.z - Mathf.Sign(a.z) * maxValue;
+        }
+        
+        return new Vector3(x, y, z);
     }
 }

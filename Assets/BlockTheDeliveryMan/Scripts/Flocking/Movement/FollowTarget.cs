@@ -23,7 +23,7 @@ public class FollowTarget : MonoBehaviour, ISteeringBehavior
     public Optional<Vector3> ComputeHeading()
     {
         if (!_target)
-            return default;
+            return new Optional<Vector3>();
 
         Vector3 directionToTarget = _target.position - transform.position;
         directionToTarget.Normalize();

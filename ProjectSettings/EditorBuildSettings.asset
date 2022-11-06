@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BlockTheDeliveryMan/Scenes/Option.unity
     guid: 5329cd9aee017fc40b5818e0bfe9b81f
+  - enabled: 1
+    path: Assets/BlockTheDeliveryMan/Scenes/Boid.unity
+    guid: e2b101bf7d9287144978a6a2c3a21e68
   - enabled: 0
     path: Assets/BlockTheDeliveryMan/Scenes/Main.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/BlockTheDeliveryMan/Scenes/GameByTxtFile.unity
     guid: 6a1cc34fade4b70479d7eef53666ce73
   m_configObjects: {}

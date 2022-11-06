@@ -24,6 +24,7 @@ public class FieldOfView : MonoBehaviour
 
 	private void OnDrawGizmosSelected()
 	{
+#if  UNITY_EDITOR
 		var currentTransform = transform;
 		var position = currentTransform.position;
 		var leftLimit = Helpers.DirFromAngle(-ViewAngleBySide, currentTransform) * _viewRadius;
@@ -33,5 +34,6 @@ public class FieldOfView : MonoBehaviour
 		Handles.DrawLine(position, position + leftLimit);
 		Handles.DrawLine(position, position + rightLimit);
 		Handles.DrawWireArc(position, Vector3.up, leftLimit, _viewAngle, _viewRadius);
+#endif
 	}
 }

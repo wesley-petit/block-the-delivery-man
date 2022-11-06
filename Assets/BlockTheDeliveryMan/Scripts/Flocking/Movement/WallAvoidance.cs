@@ -7,32 +7,30 @@ public class WallAvoidance : MonoBehaviour, ISteeringBehavior
     [SerializeField] private float _sensorLength = 2.5f;
     [SerializeField] private LayerMask _obstacleLayer;
 
-    private Boid _boid;
-    
-    private void Awake() => _boid = GetComponent<Boid>();
-
     public Optional<Vector3> ComputeHeading()
     {
-        Optional<Vector3> nearestHit = default;
-        float smallestDistance = float.MaxValue;
-        
+        Optional<Vector3> avoidanceSum = new Optional<Vector3>();
+
         foreach (var angleInDegree in _sensorsAngleInDegrees)
         {
             var sensorDirection = Helpers.DirFromAngle(angleInDegree, transform);
             var ray = new Ray(transform.position, sensorDirection);
             
-            if (Physics.Raycast(ray, out var hit, _sensorLength, _obstacleLayer) && hit.distance < smallestDistance)
+            if (Physics.Raycast(ray, out var hit, _sensorLength, _obstacleLayer))
             {
-                smallestDistance = hit.distance;
-
-                var avoidDirection = Vector3.Reflect(_boid.Heading, hit.normal);
+                var avoidDirection = Vector3.Reflect(sensorDirection, hit.normal);
                 avoidDirection.Normalize();
                 avoidDirection.y = 0f;
-                nearestHit = new Optional<Vector3>(_force * avoidDirection);
+
+                var avoidance = _force * avoidDirection;
+                if (avoidanceSum.HasValue)
+                    avoidance += avoidanceSum.Value;
+
+                avoidanceSum = new Optional<Vector3>(avoidance);
             }
         }
 
-        return nearestHit;
+        return avoidanceSum;
     }
 
     private void OnDrawGizmosSelected()
